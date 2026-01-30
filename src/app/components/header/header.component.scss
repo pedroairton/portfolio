@@ -1,0 +1,75 @@
+header {
+  position: fixed;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  top: 1rem;
+  left: 50%;
+  translate: -50% 0;
+  padding: 2rem;
+  border-radius: 10px;
+  border: solid 1px #dadada;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  gap: 100px;
+  min-width: 1024px;
+  h3 {
+    font-size: 1.5rem;
+    color: #11c96d;
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 0;
+    transition: .3s;
+    @keyframes name {
+      0%{
+          translate: -100% 0;
+      }
+      100%{
+          translate: 100% 0;
+      }
+    }
+    &:hover {
+      color: #0c815c;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      translate: -100% 0;
+      height: 2px;
+      background-color: #0c815c;
+      animation: name 3s linear infinite;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    a {
+      font-size: 1.25rem;
+      position: relative;
+      font-weight: 600;
+      transition: 0.3s;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: #11c96d;
+        left: 0;
+        bottom: -5px;
+        transition: 0.3s;
+      }
+      &:hover {
+        color: #11c96d;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
